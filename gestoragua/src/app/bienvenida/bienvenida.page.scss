@@ -1,0 +1,14 @@
+ion-header, ion-footer{
+    ion-toolbar, ion-buttons{
+        --background: #f1f5f8;
+        padding: 0 1px;
+    }
+}
+ion-label, p{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+ion-content{
+    --background: linear-gradient(90deg, rgb(147,206,222,1) 0%, rgb(117,189,209,1) 41%, rgb(73,165,191,1) 100%);
+}
