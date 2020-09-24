@@ -1,23 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-button (click)="onClick()" class="bordered">
-          <ion-icon slot="start" name="person-outline"></ion-icon>
-          <!--Implementar la funcion de busqueda en la base de datos-->         
-        <ion-label>Fmla. Saquipay</ion-label>         
-        </ion-button>
-      </ion-buttons>
-
-      <ion-buttons slot="end">
-        <ion-button (click)="onClick()" class="bordered">
-          <!--Aqui hay que implementar una funcion que analice si el usuario tiene valores 
-          pendientes por pagar aparesca el icono de warning-outline caso contrario
-        mostrar el wallet-outline-->
-          <ion-icon slot="start" name="warning-outline"></ion-icon>
-          <!--Otra funcion para que busque los valores pendientes por pagar-->
-          <ion-label>$ 10.50</ion-label>
-        </ion-button>
-      </ion-buttons>
+    <p class="ion-text-center custom-font">Sistema de Gestión de Agua Potable</p>
   </ion-toolbar>
 </ion-header>
 
@@ -25,7 +8,14 @@
 
 <ion-content fullscreen="true">
 
+  <div class="container">
+      <ion-img src="assets/img/gotas-de-agua.svg" ></ion-img>
+      <h1>Bienvenido</h1>
+      <ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
+  </div>
 </ion-content>
+
+
 
 <ion-footer class="ion-no-border">
   <ion-toolbar>
