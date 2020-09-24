@@ -1,0 +1,26 @@
+<ion-content fullscreen="true">
+  <div class="container">
+    <ion-img src="assets/img/gotas-de-agua.svg"></ion-img>
+
+  </div>
+
+  <div class="container">
+    <div class="form">
+      <ion-item>
+        <ion-icon slot="start" name="person-circle-outline"></ion-icon>
+        <input type="text" name="cedula" id="cedula" [(ngModel)]="cedula" placeholder="Cédula">
+      </ion-item>
+      
+      <ion-item>
+        <ion-icon slot="start" name="key-outline"></ion-icon>
+        <input type="password" name="clave" id="clave" [(ngModel)]="clave" placeholder="Contraseña">
+      </ion-item>
+      <br>
+
+      <ion-button (click)="ingresar()" expand="full">
+        Ingresar
+      </ion-button>
+
+    </div>
+  </div>
+</ion-content>

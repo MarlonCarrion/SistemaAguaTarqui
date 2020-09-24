@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    flex-direction: column;
+}
+ion-img{
+    width: 300px;
+    height: auto;
+    margin-top: auto;
+}
+ion-content, ion-item{
+    --background: linear-gradient(90deg, rgb(147,206,222,1) 0%, rgb(117,189,209,1) 41%, rgb(73,165,191,1) 100%);
+}
+
