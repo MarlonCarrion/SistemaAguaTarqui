@@ -20,32 +20,51 @@ export class Tab1Page {
       data: {
         labels: ["Enero", "Febrero", "Marzo", "Abril", "Mayo"],
         datasets: [{
-          label: "Consumo Agua Potable",
+          label: "Consumo Últimos 6 meses",
           data: [10,20,30,40,50],
           backgroundColor: [
-            'rgb(255, 0, 0)',
-            'rgb(0, 0, 255)',
-            'rgb(60, 179, 113)',
-            'rgb(255, 165, 0)',
-            'rgb(106, 90, 205)'
+            'rgba(0,255,255,0.7)',
+            'rgba(0,255,255,0.7)',
+            'rgba(0,255,255,0.7)',
+            'rgba(0,255,255,0.7)',
+            'rgba(0,255,255,0.7)'
           ]
         }]
+      }, 
+      options:{
+        scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              }
+          }]
+      }
       }
     });
   }
   showChartComparativa(){
     var ctx = (<any>document.getElementById('myChart2')).getContext('2d');
     var chart = new Chart(ctx, {
-      type: 'pie',
+      type: 'bar',
       data: {
-        labels: ["Mayo"],
+        labels: ["Comunidad", "Fmla Saquipay"],
         datasets: [{
-          label: "Consumo",
-          data: [10],
+          label: "Consumo Referencial",
+          data: [11, 15],
           backgroundColor: [
-            'rgb(255, 0, 0)'
+            'rgba(0,255,255,0.7)',
+            'rgba(0,255,255,0.7)'
           ]
         }]
+      }, 
+      options:{
+        scales: {
+          yAxes: [{
+              ticks: {
+                  beginAtZero: true
+              }
+          }]
+      }
       }
     });
   }
