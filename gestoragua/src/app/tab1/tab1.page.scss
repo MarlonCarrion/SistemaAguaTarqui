@@ -1,0 +1,24 @@
+ion-content{
+    --background: linear-gradient(90deg, rgb(147,206,222,1) 0%, rgb(117,189,209,1) 41%, rgb(73,165,191,1) 100%);
+    
+}
+.container{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 25px;
+    height: 30%;
+}
+ion-row{
+   margin-block-end: 0%;
+}
+ion-col, ion-title{
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+}
+
+.rowcol{
+    ion-col{
+        font-size: 24px;  
+    }
+}
