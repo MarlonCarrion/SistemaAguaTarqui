@@ -1,17 +1,83 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>
-      Perfil modificado por marlon desde mi pc
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="onClick()" class="bordered">
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+        <!--Implementar la funcion de busqueda en la base de datos-->
+        <ion-label>Fmla. Saquipay</ion-label>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()" class="bordered">
+        <!--Aqui hay que implementar una funcion que analice si el usuario tiene valores 
+          pendientes por pagar aparesca el icono de warning-outline caso contrario
+        mostrar el wallet-outline-->
+        <ion-icon slot="start" name="warning-outline"></ion-icon>
+        <!--Otra funcion para que busque los valores pendientes por pagar-->
+        <ion-label>$ 10.50</ion-label>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://www.loja.gob.ec/files/noticias/2017/08/agua.png">
+      </ion-avatar>
+      <ion-label>
+        <h3>Corte de agua</h3>
+        <p>Aviso de corte de agua</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius consequuntur laudantium eos fugit alias dolor quo, magnam sapiente distinctio. Fugit cumque minus quis voluptates fugiat ipsum repudiandae rerum id distinctio.</p>
+      </ion-label>
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img
+          src="https://e7.pngegg.com/pngimages/298/561/png-clipart-stick-figure-convention-meeting-business-meeting-text-logo.png">
+      </ion-avatar>
+      <ion-label>
+        <h3>Reunión</h3>
+        <p>Lugar: Junta Parroquial</p>
+        <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+      </ion-label>
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://crconsultorescolombia.com/wp-content/wptouch-data/icons/custom/factura.png">
+      </ion-avatar>
+      <ion-label>
+        <h3>Factura</h3>
+        <p>dolor sit amet</p>
+        <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+      </ion-label>
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+      <ion-label>
+        <h3>Lorem ipsum</h3>
+        <p>dolor sit amet</p>
+        <p>consectetur adipiscing elit. Duis ut urna neque.</p>
+      </ion-label>
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="eye-outline"></ion-icon>
+      </ion-button>
+    </ion-item>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  </ion-card>
+
+
 </ion-content>
