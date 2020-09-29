@@ -8,7 +8,7 @@
     <div class="form">
       <ion-item>
         <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-        <ion-input type="text" name="cedula" id="cedula" [(ngModel)]="cedula" placeholder="Cédula" (ionInput)="ingresar()"></ion-input>
+        <ion-input type="text" name="cedula" id="cedula" [(ngModel)]="cedula" placeholder="Cédula" (ionInput)="onKeyDownHandler($event)"></ion-input>
       </ion-item>
       
       <ion-item>
