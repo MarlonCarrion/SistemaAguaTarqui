@@ -26,4 +26,11 @@ export class Login2Page implements OnInit {
       alert("error");
     }
   }
+  onKeyDownHandler(event) {
+    var codigo = event.which || event.keyCode;
+    console.log("Presionada: " + codigo);
+  }
+  eventHandler(event) {
+    console.log(event, event.keyCode, event.keyIdentifier);
+ } 
 }

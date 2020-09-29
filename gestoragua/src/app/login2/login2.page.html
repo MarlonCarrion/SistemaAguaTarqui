@@ -8,18 +8,20 @@
     <div class="form">
       <ion-item>
         <ion-icon slot="start" name="person-circle-outline"></ion-icon>
-        <input type="text" name="cedula" id="cedula" [(ngModel)]="cedula" placeholder="Cédula">
+        <ion-input type="text" name="cedula" id="cedula" [(ngModel)]="cedula" placeholder="Cédula" (ionInput)="ingresar()"></ion-input>
       </ion-item>
       
       <ion-item>
         <ion-icon slot="start" name="key-outline"></ion-icon>
-        <input type="password" name="clave" id="clave" [(ngModel)]="clave" placeholder="Contraseña">
+        <ion-input type="password" name="clave" id="clave" [(ngModel)]="clave" placeholder="Contraseña" enterkeyhint="send"></ion-input>
+        
       </ion-item>
       <br>
 
       <ion-button (click)="ingresar()" expand="full">
         Ingresar
       </ion-button>
+      
 
     </div>
   </div>
