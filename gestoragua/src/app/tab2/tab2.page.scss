@@ -2,3 +2,24 @@ ion-content{
     --background: linear-gradient(90deg, rgb(147,206,222,1) 0%, rgb(117,189,209,1) 41%, rgb(73,165,191,1) 100%);
     
 }
+.col-centrar{
+    text-align: center;
+}
+
+table { 
+    width: 100%; 
+    border-collapse: collapse; 
+}
+tr:nth-of-type(odd) { 
+    background: #eee; 
+}
+th { 
+    background: #333; 
+    color: white; 
+    font-weight: bold; 
+}
+td, th { 
+    padding: 6px; 
+    border: 1px solid #ccc; 
+    text-align: left; 
+}
