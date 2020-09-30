@@ -13,6 +13,7 @@ export class Tab1Page {
     this.showChartBar();
     this.showChartComparativa();
   }
+  
   showChartBar() {
     var ctx = (<any>document.getElementById('myChart')).getContext('2d');
     var chart = new Chart(ctx, {
