@@ -8,8 +8,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login2.page.scss'],
 })
 export class Login2Page implements OnInit {
-  public ci='0106207038';
-  public pass='Mc0967846110';
+  public ci = '0106207038';
+  public pass = 'Mc0967846110';
 
   cedula;
   clave;
@@ -19,18 +19,24 @@ export class Login2Page implements OnInit {
   ngOnInit() {
   }
 
-  public ingresar(){
-    if (this.ci===this.cedula && this.pass===this.clave) {
+  public ingresar() {
+    if (this.ci === this.cedula && this.pass === this.clave) {
       return this.router.navigateByUrl('/tabs');
     } else {
       alert("error");
     }
   }
+  getValue(event) {
+    var codigo = event.which || event.keyCode;
+    console.log("Presionada: " + codigo);
+  }
+  
   onKeyDownHandler(event) {
     var codigo = event.which || event.keyCode;
     console.log("Presionada: " + codigo);
   }
-  eventHandler(event) {
-    console.log(event, event.keyCode, event.keyIdentifier);
- } 
+  eventoMostrar(event) {
+    console.log(event);
+  }
+
 }
