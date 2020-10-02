@@ -10,7 +10,7 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   getEmployeesList(){
-    const path='http://localhost:8080/api/path1/employee';
+    const path='http://192.168.0.102:8080/api/path1/employee';
     return this.http.get<Employee[]>(path);
   }
 }
