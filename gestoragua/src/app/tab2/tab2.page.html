@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button (click)="onClick()" class="bordered">
+      <ion-button (click)="gotoCrud()" class="bordered">
         <ion-icon slot="start" name="person-outline"></ion-icon>
         <!--Implementar la funcion de busqueda en la base de datos-->
         <ion-label>Fmla. Saquipay</ion-label>
@@ -23,7 +23,6 @@
 
 <ion-content [fullscreen]="false">
   <ion-card>
-    <ion-card-content>
       <ion-item>
         <ion-label class="col-centrar"><b>SGA "Gullanzhapa-Parcoloma"</b></ion-label>
       </ion-item>
@@ -56,8 +55,6 @@
         <ion-label>Medidor:</ion-label>
         <ion-label>265952</ion-label>
       </ion-item>
-
-    </ion-card-content>
   </ion-card>
 
   <ion-card>
@@ -90,7 +87,6 @@
   </ion-card>
 
   <ion-card>
-    <ion-card-content>
       <ion-item>
         <ion-label>Subtotal</ion-label>
         <ion-label>$ 10.00</ion-label>
@@ -110,7 +106,6 @@
         <ion-label>Total a pagar:</ion-label>
         <ion-label>$ 14,50</ion-label>
       </ion-item>
-    </ion-card-content>
   </ion-card>
 
 

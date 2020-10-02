@@ -1,5 +1,7 @@
 {
   "name": "gestoragua",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

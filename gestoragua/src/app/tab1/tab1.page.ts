@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Chart } from "chart.js";
 
 @Component({
@@ -8,12 +9,14 @@ import { Chart } from "chart.js";
 })
 export class Tab1Page {
 
-  constructor() { }
+  constructor(private router:Router) { }
   ngOnInit() {
     this.showChartBar();
     this.showChartComparativa();
   }
-  
+  gotoCrud(){
+    return this.router.navigateByUrl('/crud-consumidor');
+  }
   showChartBar() {
     var ctx = (<any>document.getElementById('myChart')).getContext('2d');
     var chart = new Chart(ctx, {

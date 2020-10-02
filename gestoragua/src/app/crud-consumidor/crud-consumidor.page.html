@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Datos Personales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen="true">
+  <ion-card>
+      <ion-item>
+        <ion-label>Identificación:</ion-label>
+        <input type="text" id="cedula" [(ngModel)]="cedula" name="cedula" placeholder="0106207038" disabled="true">
+        <ion-button (click)="verCedula()" size="small" color="secondary">
+          <ion-icon name="eye"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Nombres:</ion-label>
+        <input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" placeholder="Cristian Rafael"
+          disabled="true">
+        <ion-button (click)="verNombre()" size="small" color="secondary">
+          <ion-icon name="eye"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Apellidos:</ion-label>
+        <input type="text" id="apellido" [(ngModel)]="apellido" name="apellido" placeholder="Saquipay Unknow"
+          disabled="true">
+        <ion-button (click)="verApellido()" size="small" color="secondary">
+          <ion-icon name="eye"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Dirección:</ion-label>
+        <input type="text" id="direccion" [(ngModel)]="direccion" name="direccion" placeholder="Parcoloma"
+          disabled="true">
+
+        <ion-button (click)="verDireccion()" size="small" color="secondary">
+          <ion-icon name="eye"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Medidor:</ion-label>
+        <input type="text" id="medidor" [(ngModel)]="medidor" name="medidor" placeholder="259562" disabled="true">
+
+        <ion-button (click)="verMedidor()" size="small" color="secondary">
+          <ion-icon name="eye"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Correo:</ion-label>
+        <input type="text" id="correo" [(ngModel)]="correo" name="correo" placeholder="cristiansaquipay.com"
+          disabled="{{isDisabledCorreo}}">
+
+        <ion-button (click)="habilitarCorreo()" size="small" color="secondary">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Teléfono móvil:</ion-label>
+        <input type="text" id="celular" [(ngModel)]="celular" name="celular" placeholder="099999999"
+          disabled="{{isDisabledMovil}}">
+
+        <ion-button (click)="habilitarMovil()" size="small" color="secondary">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Teléfono fijo:</ion-label>
+        <input type="text" id="telefono" [(ngModel)]="telefono_model" name="telefono" placeholder="2859645"
+          disabled="{{isDisabledTelefono}}">
+
+        <ion-button (click)="habilitarTelefono()" size="small" color="secondary">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+      </ion-item>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-button (click)="cancelarActualizar()" expand="full" color="danger">
+            <ion-icon slot="start" name="close"></ion-icon>
+            Salir
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button (click)="actualizarDatos()" expand="full" color="secondary">
+            <ion-icon slot="start" name="save"></ion-icon>
+            Actualizar
+          </ion-button>
+        </ion-col>
+      </ion-row>
+  </ion-card>
+  
+  <button (click)="getAllTasks()">
+    getAllTasks()
+  </button>
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let task of tasks">
+          <ion-label>{{task.title}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let employee of employees">
+          <ion-label>{{employee.fname}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
