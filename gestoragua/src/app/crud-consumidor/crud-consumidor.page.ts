@@ -16,6 +16,7 @@ import { Task } from "../task";
 })
 export class CrudConsumidorPage implements OnInit {
 
+  ci="0106207038";
 
   tasks: Task[]=[];
 
@@ -59,6 +60,9 @@ export class CrudConsumidorPage implements OnInit {
     this.isDisabledCorreo = false;
   }
   cancelarActualizar() {
+    return this.router.navigateByUrl('/tabs');
+  }
+  salir(){
     return this.router.navigateByUrl('/tabs');
   }
 }
