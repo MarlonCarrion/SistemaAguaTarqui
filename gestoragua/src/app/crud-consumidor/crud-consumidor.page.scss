@@ -1,3 +1,28 @@
 ion-content{
     --background: linear-gradient(90deg, rgb(147,206,222,1) 0%, rgb(117,189,209,1) 41%, rgb(73,165,191,1) 100%);  
 }
+.btn-editar{
+    height: 27px;
+    width: 40px;
+}
+ion-input{
+    font-size: 15px;
+}
+.container{
+    background-color: aliceblue;
+}
+button{
+    height: 35px;
+    background-color: aqua;
+    border-radius: 10px 3px 10px 3px;
+}
+
+ion-button{
+    --border-radius: 5px;
+}
+.espacio{
+    height: 10px;
+}
+
+
+

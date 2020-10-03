@@ -3,92 +3,108 @@
     <ion-buttons slot="start">
       <ion-button (click)="salir()">
         <ion-icon slot="start" name="arrow-back" size="large"></ion-icon>
-       
+
       </ion-button>
     </ion-buttons>
-    
+
     <ion-title>Datos Personales</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen="true">
+<ion-item class="espacio">
+</ion-item>
+  <ion-item>
+    <ion-label position="stacked">Cédula</ion-label>
+    <ion-input type="text" id="cedula" [(ngModel)]="cedula_model" name="cedula" value="" readonly>0106207038</ion-input>
 
-    <ion-item>
-      <ion-label position="stacked">Cédula</ion-label>
-      <ion-input type="text" id="cedula" [(ngModel)]="cedula" name="cedula" value="" readonly>0106207038</ion-input>    
-    </ion-item>
-
-
-     <ion-virtual-scroll [items]="items">
-      <div *virtualItem="let item">
-        <my-custom-item [item]="item">
-          {{ item }}
-        </my-custom-item>
-      </div>
-    </ion-virtual-scroll>
-
-    <ion-item>
-      <ion-label position="stacked">Nombres:</ion-label>
-      <ion-input type="text" id="nombre" [(ngModel)]="nombre" name="nombre" value="" readonly>Cristian Rafael</ion-input>
-   
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Apellidos</ion-label>
-      <ion-input type="text" id="apellido" [(ngModel)]="apellido" name="apellido" value="" readonly>Saquipay Loja</ion-input>
-      
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Dirección</ion-label>
-      <ion-input type="text" id="direccion" [(ngModel)]="direccion" name="direccion" value="" readonly>Parcoloma</ion-input>
-      
-    </ion-item>
-
-    <ion-item>
-      <ion-label position="stacked">Medidor</ion-label>
-      <ion-input type="text" id="medidor" [(ngModel)]="medidor" name="medidor" value="" readonly>199432</ion-input>
-      
-    </ion-item>
+  </ion-item>
 
 
-    <ion-item>
-      <ion-label position="stacked">Correo</ion-label>
-      <ion-input type="text" id="correo" [(ngModel)]="correo" name="correo" value="">cristia.saquipay.est@tecazuay.edu.ec</ion-input>
-     
-    </ion-item>
+  <ion-virtual-scroll [items]="items">
+    <div *virtualItem="let item">
+      <my-custom-item [item]="item">
+        {{ item }}
+      </my-custom-item>
+    </div>
+  </ion-virtual-scroll>
 
-    <ion-item>
-      <ion-label position="stacked">Teléfono móvil</ion-label>
-      <ion-input type="text" id="celular" [(ngModel)]="celular" name="celular" value="" >0991477697 </ion-input>
-       
-    </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Nombres:</ion-label>
+    <ion-input type="text" id="nombre" [(ngModel)]="nombre_model" name="nombre" value="" readonly>Cristian Rafael
+    </ion-input>
 
-    <ion-item>
-      <ion-label position="stacked">Teléfono fijo:</ion-label>
-      <ion-input type="text" id="telefono" [(ngModel)]="telefono_model" name="telefono" >440410</ion-input>
-      
-    </ion-item>
+  </ion-item >
+
+  <ion-item>
+    <ion-label position="stacked">Apellidos</ion-label>
+    <ion-input type="text" id="apellido" [(ngModel)]="apellido_model" name="apellido" value="" readonly>Saquipay Loja
+    </ion-input>
+
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Dirección</ion-label>
+    <ion-input type="text" id="direccion" [(ngModel)]="direccion_model" name="direccion" value="" readonly>Parcoloma
+    </ion-input>
 
 
-      <ion-row>
-        <ion-col size="6">
-          <ion-button (click)="editar()" expand="full" color="success">
-            <ion-icon slot="start" name="create"></ion-icon>
-            Editar
-          </ion-button>
-        </ion-col>
-        <ion-col size="6">
-          <ion-button (click)="actualizarDatos()" expand="full" color="secondary">
-            <ion-icon slot="start" name="save"></ion-icon>
-            Guardar
-          </ion-button>
-        </ion-col>
-      </ion-row>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Medidor</ion-label>
+    <ion-input type="text" id="medidor" [(ngModel)]="medidor_model" name="medidor" value="" readonly>199432
+    </ion-input>
+  </ion-item>
+
+
+  <ion-item>
+    <ion-label class="i-label-desabled" position="stacked">Correo Electrónico</ion-label>
+    <ion-input type="text" id="correo" name="correo" value="" readonly>{{correo_model}}</ion-input>
+
+    <button ion-button (click)="presentAlertCorreo()" slot="end">
+      <ion-icon name="create"></ion-icon>
+    </button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Teléfono móvil</ion-label>
+    <ion-input type="text" id="celular" name="celular" value="">{{movil_model}} </ion-input>
+
+    <button ion-button (click)="presentAlertMovil()" slot="end">
+      <ion-icon name="create"></ion-icon>
+    </button>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Teléfono fijo:</ion-label>
+    <ion-input type="text" id="telefono" name="telefono">{{telefono_model}}</ion-input>
+
+    <button ion-button (click)="presentAlertTelefono()" slot="end">
+      <ion-icon name="create"></ion-icon>
+    </button>
+  </ion-item>
+
+  <ion-item class="espacio">
+  </ion-item>
+
+  <div class="container">
+    <ion-row>
+      <ion-col size="6">
+        <ion-button (click)="salir()" expand="full" color="danger" shape="round">
+          <ion-icon slot="start" name="close"></ion-icon>
+          Cancelar
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button (click)="actualizarDatos()" expand="full" color="success" shape="round">
+          <ion-icon slot="start" name="save"></ion-icon>
+          Guardar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
   
-  <button (click)="getAllTasks()">
-    getAllTasks()
-  </button>
   <ion-card>
     <ion-card-content>
       <ion-list>
