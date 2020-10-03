@@ -90,6 +90,7 @@ export class CrudConsumidorPage implements OnInit {
   async presentAlertMovil() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
+      
       header: 'Desea actualizar su número de teléfono móvil?',
       inputs: [{ name: 'editMovil', placeholder: 'Teléfono Movil' }],
       buttons: [{
@@ -101,6 +102,7 @@ export class CrudConsumidorPage implements OnInit {
         }
       }
       ]
+      
     });
 
     await alert.present();
