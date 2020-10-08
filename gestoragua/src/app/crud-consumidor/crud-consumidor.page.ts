@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, NavController } from '@ionic/angular';
 import { Observable } from 'rxjs';
 import { Employee } from '../employee';
@@ -8,6 +8,10 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { TaskService } from '../services/task.service';
 import { Task } from "../task";
+import { MedidorService } from '../services/medidor.service';
+import { Medidor } from '../Model/Medidor';
+import { ConsumidorService } from '../services/consumidor.service';
+import { Consumidor } from '../Model/Consumidor';
 
 @Component({
   selector: 'app-crud-consumidor',
@@ -16,17 +20,24 @@ import { Task } from "../task";
 })
 export class CrudConsumidorPage implements OnInit {
 
-  ci = "0106207038";
+  
 
   tasks: Task[] = [];
 
   employees: Employee[] = [];
+  medidores: Medidor[] = [];
+  
 
   correo_model: string = "cristian.saquipay.est@tecazuay.edu.ec";
   telefono_model: string = "2154165";
   movil_model: string = "545646"
 
   myValue: String = "";
+
+  id = '00-000316';
+  medidor: Medidor;
+  cedula = '0200950236';
+  consumidor: Consumidor;
 
   private isDisabledTelefono: boolean = true;
   private isDisabledMovil: boolean = true;
@@ -35,7 +46,10 @@ export class CrudConsumidorPage implements OnInit {
   constructor(private router: Router,
     private taskService: TaskService,
     private employeeService: EmployeeService,
-    private alertController: AlertController) { }
+    private medidorService: MedidorService,
+    private consumidorService: ConsumidorService,
+    private alertController: AlertController,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.taskService.getAllTasks()
@@ -47,6 +61,23 @@ export class CrudConsumidorPage implements OnInit {
       .subscribe(employees => {
         this.employees = employees;
       });
+
+    this.medidorService.getMedidorList()
+      .subscribe(medidores => {
+        this.medidores = medidores;
+      });
+
+    this.medidorService.getMedidor(this.id)
+      .subscribe(data => {
+        console.log(data)
+        this.medidor = data;
+      }, error => console.log(error));
+
+      this.consumidorService.getConsumidor(this.cedula)
+      .subscribe(data => {
+        console.log(data)
+        this.consumidor = data;
+      }, error => console.log(error));
   }
 
   getAllTasks() {
@@ -90,7 +121,7 @@ export class CrudConsumidorPage implements OnInit {
   async presentAlertMovil() {
     const alert = await this.alertController.create({
       cssClass: 'my-custom-class',
-      
+
       header: 'Desea actualizar su número de teléfono móvil?',
       inputs: [{ name: 'editMovil', placeholder: 'Teléfono Movil' }],
       buttons: [{
@@ -102,7 +133,7 @@ export class CrudConsumidorPage implements OnInit {
         }
       }
       ]
-      
+
     });
 
     await alert.present();

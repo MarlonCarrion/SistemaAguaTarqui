@@ -16,7 +16,7 @@
 </ion-item>
   <ion-item>
     <ion-label position="stacked">Cédula</ion-label>
-    <ion-input type="text" id="cedula" [(ngModel)]="cedula_model" name="cedula" value="" readonly>0106207038</ion-input>
+    <ion-input type="text" id="cedula" [(ngModel)]="cedula_model" name="cedula" value="" readonly>{{consumidor?.cedula}}</ion-input>
 
   </ion-item>
 
@@ -31,36 +31,42 @@
 
   <ion-item>
     <ion-label position="stacked">Nombres:</ion-label>
-    <ion-input type="text" id="nombre" [(ngModel)]="nombre_model" name="nombre" value="" readonly>Cristian Rafael
+    <ion-input type="text" id="nombre" [(ngModel)]="nombre_model" name="nombre" value="" readonly>{{consumidor?.nombre}}
     </ion-input>
 
   </ion-item >
 
   <ion-item>
     <ion-label position="stacked">Apellidos</ion-label>
-    <ion-input type="text" id="apellido" [(ngModel)]="apellido_model" name="apellido" value="" readonly>Saquipay Loja
+    <ion-input type="text" id="apellido" [(ngModel)]="apellido_model" name="apellido" value="" readonly>{{consumidor?.apellido}}
     </ion-input>
 
   </ion-item>
 
   <ion-item>
     <ion-label position="stacked">Dirección</ion-label>
-    <ion-input type="text" id="direccion" [(ngModel)]="direccion_model" name="direccion" value="" readonly>Parcoloma
+    <ion-input type="text" id="direccion" [(ngModel)]="direccion_model" name="direccion" value="" readonly>{{consumidor?.direccion}}
     </ion-input>
 
 
   </ion-item>
 
   <ion-item>
+    <ion-label position="stacked">Comunidad:</ion-label>
+    <ion-input type="text" id="comunidad" [(ngModel)]="comunidad_model" name="comunidad" value="" readonly>{{consumidor?.comunidad}}
+    </ion-input>
+  </ion-item>
+
+  <ion-item>
     <ion-label position="stacked">Medidor</ion-label>
-    <ion-input type="text" id="medidor" [(ngModel)]="medidor_model" name="medidor" value="" readonly>199432
+    <ion-input type="text" id="medidor" [(ngModel)]="medidor_model" name="medidor" value="" readonly>{{medidor?.id}}
     </ion-input>
   </ion-item>
 
 
   <ion-item>
     <ion-label class="i-label-desabled" position="stacked">Correo Electrónico</ion-label>
-    <ion-input type="text" id="correo" name="correo" value="" readonly>{{correo_model}}</ion-input>
+    <ion-input type="text" id="correo" name="correo" value="" readonly>{{consumidor?.correo}}</ion-input>
 
     <button ion-button (click)="presentAlertCorreo()" slot="end">
       <ion-icon name="create"></ion-icon>
@@ -69,7 +75,7 @@
 
   <ion-item>
     <ion-label position="stacked">Teléfono móvil</ion-label>
-    <ion-input type="text" id="celular" name="celular" value="">{{movil_model}} </ion-input>
+    <ion-input type="text" id="celular" name="celular" value="">{{consumidor?.telefono_celular}}</ion-input>
 
     <button ion-button (click)="presentAlertMovil()" slot="end">
       <ion-icon name="create"></ion-icon>
@@ -78,7 +84,7 @@
 
   <ion-item>
     <ion-label position="stacked">Teléfono fijo:</ion-label>
-    <ion-input type="text" id="telefono" name="telefono">{{telefono_model}}</ion-input>
+    <ion-input type="text" id="telefono" name="telefono">{{consumidor?.telefono_fijo}}</ion-input>
 
     <button ion-button (click)="presentAlertTelefono()" slot="end">
       <ion-icon name="create"></ion-icon>
@@ -104,25 +110,6 @@
       </ion-col>
     </ion-row>
   </div>
-  
-  <ion-card>
-    <ion-card-content>
-      <ion-list>
-        <ion-item *ngFor="let task of tasks">
-          <ion-label>{{task.title}}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
 
-  <ion-card>
-    <ion-card-content>
-      <ion-list>
-        <ion-item *ngFor="let employee of employees">
-          <ion-label>{{employee.fname}}</ion-label>
-        </ion-item>
-      </ion-list>
-    </ion-card-content>
-  </ion-card>
 
 </ion-content>
